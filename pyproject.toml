@@ -1,0 +1,52 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "django-jalali"
+version = "7.4.0"
+description = "Jalali Date support for Django model and admin interface"
+readme = "README.rst"
+requires-python = ">=3.12"
+authors = [
+{ name="Milad Rastian", email="eslashmili@gmail.com" }
+]
+classifiers = [
+    "Programming Language :: Python",
+    "Environment :: Web Environment",
+    "Development Status :: 5 - Production/Stable" ,
+    "Topic :: Utilities",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.2",
+    "Framework :: Django :: 6.0"
+]
+dependencies = [
+    "django>=4.2,!=5.0.*,!=5.1.*",
+    "jdatetime",
+]
+
+[project.optional-dependencies]
+drf = [
+    "djangorestframework>=3.12",
+]
+
+[dependency-groups]
+test = [
+    "pytest",
+    "pytest-django"
+]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+
